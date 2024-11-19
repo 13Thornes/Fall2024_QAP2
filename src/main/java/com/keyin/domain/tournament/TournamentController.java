@@ -21,6 +21,11 @@ public class TournamentController {
         return tournamentService.findTournamentByID(id);
     }
 
+    @GetMapping("/tournament/{location}")
+    public Tournament getTournamentByLocation(@PathVariable String location) {
+        return tournamentService.findTournamentByLocation(location);
+    }
+
     @PostMapping("/tournament")
     public Tournament createTournament(@RequestBody Tournament newTournament) {
         return tournamentService.createTournament(newTournament);
