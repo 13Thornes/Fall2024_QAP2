@@ -12,8 +12,8 @@ public class MemberService {
         return memberRepository.findByMemberName(memberName);
     }
 
-    public Member findByPhoneNumber (String memberPhoneNumber) {
-        return memberRepository.findByMemberName(memberPhoneNumber);
+    public Member findByMemberPhoneNumber (String memberPhoneNumber) {
+        return memberRepository.findByMemberPhoneNumber(memberPhoneNumber);
     }
 
     public Member createMember(Member member) {
