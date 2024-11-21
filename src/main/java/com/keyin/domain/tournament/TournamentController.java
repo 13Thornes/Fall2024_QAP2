@@ -3,6 +3,7 @@ package com.keyin.domain.tournament;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -21,9 +22,14 @@ public class TournamentController {
         return tournamentService.findTournamentByID(id);
     }
 
-    @GetMapping("/tournament/{location}")
-    public Tournament getTournamentByLocation(@PathVariable String location) {
+    @GetMapping("/bylocation")
+    public List<Tournament> getTournamentByLocation(@RequestParam String location) {
         return tournamentService.findTournamentByLocation(location);
+    }
+
+    @GetMapping("/bystartdate")
+    public List<Tournament> getTournamentByStartDate(@RequestParam String startDate) {
+        return tournamentService.findTournamentByStartDate(startDate);
     }
 
     @PostMapping("/tournament")

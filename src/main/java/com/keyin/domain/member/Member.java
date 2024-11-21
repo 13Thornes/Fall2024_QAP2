@@ -17,10 +17,13 @@ public class Member {
     private String memberAddress;
     private String memberEmail;
     private String memberPhoneNumber;
-    private Date membershipStartDate;
-    private Date durationOfMembership;
+    private String membershipStartDate;
+    private int durationOfMembership;
 
-    public Member(long id, String memberName, String memberAddress, String memberEmail, String memberPhoneNumber, Date membershipStartDate, Date durationOfMembership) {
+    public Member() {
+    }
+
+    public Member(long id, String memberName, String memberAddress, String memberEmail, String memberPhoneNumber, String membershipStartDate, int durationOfMembership) {
         this.id = id;
         this.memberName = memberName;
         this.memberAddress = memberAddress;
@@ -70,19 +73,19 @@ public class Member {
         this.memberPhoneNumber = memberPhoneNumber;
     }
 
-    public Date getMembershipStartDate() {
+    public String getMembershipStartDate() {
         return membershipStartDate;
     }
 
-    public void setMembershipStartDate(Date membershipStartDate) {
+    public void setMembershipStartDate(String membershipStartDate) {
         this.membershipStartDate = membershipStartDate;
     }
 
-    public Date getDurationOfMembership() {
+    public int getDurationOfMembership() {
         return durationOfMembership;
     }
 
-    public void setDurationOfMembership(Date durationOfMembership) {
+    public void setDurationOfMembership(int durationOfMembership) {
         this.durationOfMembership = durationOfMembership;
     }
 }
