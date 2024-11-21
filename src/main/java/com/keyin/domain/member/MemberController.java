@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@CrossOrigin
 public class MemberController {
     @Autowired
     private MemberService memberService;
@@ -18,12 +20,12 @@ public class MemberController {
         return memberService.findMemberByID(id);
     }
 
-    @GetMapping("/member/{memberName}")
-    public Member getMemberByMemberName(@PathVariable String memberName) {
+    @GetMapping("/byname")
+    public Member getMemberByMemberName(@RequestParam String memberName) {
         return memberService.findByMemberName(memberName);
     }
-    @GetMapping("/member/{memberPhoneNumber}")
-    public Member getMemberByMemberPhoneNumber(@PathVariable String memberPhoneNumber) {
+    @GetMapping("/byphonenumber")
+    public Member getMemberByMemberPhoneNumber(@RequestParam String memberPhoneNumber) {
         return memberService.findByMemberPhoneNumber(memberPhoneNumber);
     }
 

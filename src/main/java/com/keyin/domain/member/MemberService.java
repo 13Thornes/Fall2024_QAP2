@@ -10,9 +10,6 @@ public class MemberService {
     @Autowired
     private MemberRepository memberRepository;
 
-    @Autowired
-    private MemberService memberService;
-
     public Member createMember(Member newMember) {
         return memberRepository.save(newMember);
     }

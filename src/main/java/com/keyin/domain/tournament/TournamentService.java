@@ -1,7 +1,6 @@
 package com.keyin.domain.tournament;
 
 import com.keyin.domain.member.Member;
-import com.keyin.domain.member.MemberRepository;
 import com.keyin.domain.member.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,11 +33,11 @@ public class TournamentService {
         return tournamentOptional.orElse(null);
     }
 
-    public Tournament findTournamentByLocation(String location) {
+    public List<Tournament> findTournamentByLocation(String location) {
         return tournamentRepository.findTournamentByLocation(location);
     }
 
-    public Tournament findTournamentByStartDate(Date startDate) {
+    public List<Tournament> findTournamentByStartDate(String startDate) {
         return tournamentRepository.findTournamentByStartDate(startDate);
     }
 
